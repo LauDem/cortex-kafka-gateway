@@ -1,44 +1,43 @@
 {
 	"kafka": {
-		"clientId":"Cortex",
-        "brokers": [{
+		"clientId": "Cortex",
+		"brokers": [{
 			"host": "localhost",
 			"port": "29092"
 		}],
 		"security": {
 			"SSL": true
 		},
-        "consumer": {
-            "groupId":"test-group",
-            "topics": [
-                {
-                    "topic":"example-topic",
-                    "fromBeginning":true
-                },
-                {
-                    "topic":"mockup-topic-for-poc"
-                }
-            ]
-            
-        }
-	},
-    "cortex": {
-        "api": {
-            "domain":"intelligentorchestration.com",
-            "https":true,
-            "port":10000,
-            "async":true,
-            "contentType": "application/json",
-            "verb": "POST"
-        },
-        "authorization": {
-            "type":"Basic",
-            "username":"CortexFlow",
-            "password":"C0rt3xFl0w"
-        },
-        "flow":"kafka",
-        "initiator":"Node Kafka gateway",
-        "showToken":true
+		"consumer": {
+			"groupId": "test-group",
+			"topics": [{
+					"topic": "example-topic",
+					"fromBeginning": true
+				},
+				{
+					"topic": "mockup-topic-for-poc"
+				}
+			]
 
-    }
+		}
+	},
+	"cortex": {
+		"api": {
+			"domain": "intelligentorchestration.com",
+			"https": true,
+			"port": 10000,
+			"async": true,
+			"contentType": "application/json",
+			"verb": "POST"
+		},
+		"authorization": {
+			"type": "Basic",
+			"username": "CortexFlow",
+			"password": "C0rt3xFl0w"
+		},
+		"flow": "kafka",
+		"initiator": "Node Kafka gateway",
+		"showToken": true
+
+	}
 }
