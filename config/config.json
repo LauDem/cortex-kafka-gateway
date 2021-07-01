@@ -2,14 +2,14 @@
 	"kafka": {
 		"clientId": "Cortex",
 		"brokers": [{
-			"host": "localhost",
+			"host": "152.228.216.197",
 			"port": "29092"
 		}],
 		"security": {
 			"SSL": true
 		},
 		"consumer": {
-			"groupId": "test-group",
+			"groupId": "another-cortex-group",
 			"topics": [{
 					"topic": "example-topic",
 					"fromBeginning": true

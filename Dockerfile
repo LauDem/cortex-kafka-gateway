@@ -6,8 +6,10 @@ COPY package.json .
 
 RUN npm install
 
+ENV containerized = true
+
 COPY . .
 
-EXPOSE 3000
+EXPOSE 3000 8080 29092
 
 CMD [ "node", "index.js" ]

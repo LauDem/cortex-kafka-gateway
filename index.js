@@ -2,9 +2,17 @@ const consumers = require('./app/consume/consume');
 
 const restApi = require('./app/produce/restApi');
 
+// const { configs, conf } = require('./config/config')
 
-consumers.startConsuming();
+// console.log(conf, configs)
+async function start(){
 
-restApi.startListening;
+    await consumers.startConsuming();
+
+    // await restApi.startListening;
+
+}
+
+start();
 
 

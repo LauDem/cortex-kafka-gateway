@@ -1,9 +1,9 @@
 // start the rest api
 
 const { CompressionTypes } = require('kafkajs');
-const { kafka } = require('../kafka');
+const kafkaLoader = require('../kafka');
 
-const producer = kafka.producer();
+
 
 const obj = {
     foo: "bar",
@@ -12,6 +12,12 @@ const obj = {
 
 async function produce( topic, messages, acks = -1, timeout = 3000, compression = CompressionTypes.None){
 
+    const kafka = await kafkaLoader.load();
+
+    console.log("kafka producer")
+    
+    const producer = kafka.producer();
+    
     await producer.connect()
 
     console.log("producer connected")
