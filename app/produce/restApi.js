@@ -1,6 +1,9 @@
 const express = require('express');
 const producer = require('./produce')
 
+exports.startListening  = ()=>{
+    
+    console.log("starting the REST API")
 const app = express();
 
 app.use(express.json())
@@ -32,10 +35,10 @@ app.get('*', (req, res) => {
 })
 
 
-exports.startListening  = app.listen(8080, (err) => {
+app.listen(8080, (err) => {
     
     err ? 
         console.error(err) 
         : console.log('REST API started')
-  })
+  })}
 

@@ -51,6 +51,7 @@ const options = {
 async function notify(message){
 
   body.Arguments.message = message;
+  console.log(JSON.stringify(body));
 
   // options.headers['Content-Length'] = body.length;
 
@@ -65,6 +66,7 @@ async function notify(message){
   req.on('error', error => {
     console.error(error)
   })
+  
   
   req.write(JSON.stringify(body))
   req.end()

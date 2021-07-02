@@ -4,10 +4,13 @@ const {configs} = require('../../config/config')
 
 
 
-async function consume(){
+var consume = async () => {
 
-    let kafka = await kafkaLoader.load();
+    console.log(kafkaLoader)
+    let kafka = await kafkaLoader.load()//.then((kf)=>console.log(kf));
     console.log("kafka consumer")
+
+    console.log(kafka)
 
     const consumer = kafka.consumer({ groupId: configs.kafka.consumer.groupId })
 
@@ -16,9 +19,9 @@ async function consume(){
 
     console.log("consumers initializing!")
 
-    await consumer.connect().then((val)=>console.log("connection", val))
+    await consumer.connect().then((val)=>console.log("consumer connected", val))
 
-    console.log("consumer connected")
+    // console.log("consumer connected")
     
     for(let i=0; i<topics.length ; i++) {
         await consumer.subscribe(topics[i]) 
@@ -36,8 +39,10 @@ async function consume(){
             timestamp: message.timestamp,
             offset: message.offset,
             headers: message.headers,
-            key: message.key? message.key.toString : '',
-            value: message.value ? message.value.toString : '',
+            // key: message.key,
+            // value: message.value,
+            key: message.key? message.key.toString() : '',
+            value: message.value ? message.value.toString() : '',
             size: message.size,
             attributes: message.attributes
         }
@@ -52,4 +57,4 @@ async function consume(){
 }
 
 
-exports.startConsuming = consume;
+exports.startConsuming =  consume;

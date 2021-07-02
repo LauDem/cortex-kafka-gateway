@@ -1,15 +1,16 @@
 {
 	"kafka": {
-		"clientId": "Cortex",
-		"brokers": [{
-			"host": "152.228.216.197",
-			"port": "29092"
-		}],
+		"clientId": "laurent",
+		"brokers": [
+			{
+				"host": "localhost",
+				"port": "29092"
+			}],
 		"security": {
 			"SSL": true
 		},
 		"consumer": {
-			"groupId": "another-cortex-group",
+			"groupId": "lde-cortex-group5",
 			"topics": [{
 					"topic": "example-topic",
 					"fromBeginning": true
@@ -35,7 +36,7 @@
 			"username": "CortexFlow",
 			"password": "C0rt3xFl0w"
 		},
-		"flow": "kafka",
+		"flow": "kafka-ldemouge@cortex-pre",
 		"initiator": "Node Kafka gateway",
 		"showToken": true
 

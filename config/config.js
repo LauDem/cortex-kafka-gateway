@@ -1,6 +1,6 @@
 var JSONConfigs =  require('./config.json');
 
-console.log(typeof JSONConfigs)
+// console.log(typeof JSONConfigs)
 
 // let conf = JSON.parse(JSONConfigs);
 

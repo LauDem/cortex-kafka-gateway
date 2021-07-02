@@ -1,6 +1,6 @@
 ### Build the image
 ```
-docker build . -t <your-image-name>
+docker build . -t <yourNamespace/imageName:tag>
 ```
 > **Exemple**
 > *docker build . -t laudem/kafka-cortex-gateway:1.7*
@@ -12,3 +12,4 @@ docker run -d --network host --name kafka-cortex-gateway laudem/kafka-cortex-gat
 > **Exemple**
 > *docker run -d --network host --name kafka-cortex-gateway laudem/kafka-cortex-gateway:1.7*
 
+ 
