@@ -3,7 +3,7 @@
 		"clientId": "laurent",
 		"brokers": [
 			{
-				"host": "localhost",
+				"host": "152.228.216.197",
 				"port": "29092"
 			}],
 		"security": {
