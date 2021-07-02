@@ -27,7 +27,7 @@ async function produce( topic, messages, acks = -1, timeout = 3000, compression 
         messages: [
             { value: "Hello Kafka, I'm the Cortex node layer!" },
             { key: 'key1', value: 'hello world', partition: 0 },
-            { key: 'key2', value: JSON.stringify(obj), partition: 0, timestamp: new Date('now'), headers }
+            { key: 'key2', value: JSON.stringify(obj), partition: 0, timestamp: new Date('now'), headers: {} }
         ],
     })
 
